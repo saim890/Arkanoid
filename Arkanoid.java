@@ -26,6 +26,7 @@ public class Arkanoid extends JFrame implements ActionListener{ //Runs the game 
 		add(game);
 
 		setVisible(true);
+		setResizable(false);
 	}
 	public void start(){ //Starts the timer
 		myTimer.start();
@@ -84,11 +85,11 @@ class GamePanel extends JPanel implements KeyListener{
 	}
 	public void paintComponent(Graphics g){
 		g.drawImage(back,0,0,this);
-		g.setColor(Color.red);
-		g.fillRect(brickx, bricky,80,10);
+		g.setColor(Color.gray);
+		g.fillRect(brickx, bricky,120,15);
 	}
 	private void checkOOB() {
         if(brickx < 0) brickx = 0;
-        if(brickx > 710) brickx = 710;
+        if(brickx > 675) brickx = 675;
     }
 }
